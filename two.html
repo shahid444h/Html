@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Text Formatting Tags</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  h1 {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .section-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    width: 90%;
+  }
+
+  .section-box h2 {
+    color: #4CAF50;
+    margin-top: 0;
+  }
+
+  .code {
+    display: block;
+    background: #272822;
+    color: #f8f8f2;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+  }
+
+  .output {
+    background: #e8f5e9;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .explanation {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-left: 4px solid #4CAF50;
+    border-radius: 8px;
+    color: #444;
+  }
+
+  .explanation strong {
+    color: #2e7d32;
+  }
+
+  button {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  button a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  button:hover {
+    background-color: #388e3c;
+  }
+
+  @media (max-width: 768px) {
+    .section-box { width: 95%; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Ultimate HTML Text Formatting Tags Guide</h1>
+
+<main>
+
+  <div class="section-box">
+    <h2>1. &lt;b&gt; vs &lt;strong&gt;</h2>
+    <div class="code">&lt;b&gt;This is bold&lt;/b&gt;</div>
+    <div class="output"><b>This is bold</b></div>
+    <div class="code">&lt;strong&gt;This is strong&lt;/strong&gt;</div>
+    <div class="output"><strong>This is strong</strong></div>
+    <div class="explanation">
+      <strong>&lt;b&gt;</strong> — makes text bold only for <em>visual appearance</em>.  
+      It is <strong>not semantic</strong>, meaning it does not tell the browser or screen reader that the text is important — just boldens it.<br><br>
+      <strong>&lt;strong&gt;</strong> — also makes text bold, but it has <em>semantic meaning</em>. It tells that the content is <strong>important or urgent</strong>.  
+      ✅ <em>Use &lt;strong&gt; when the text needs importance; &lt;b&gt; for simple bold styling.</em>
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>2. &lt;i&gt; vs &lt;em&gt;</h2>
+    <div class="code">&lt;i&gt;Italic Text&lt;/i&gt;</div>
+    <div class="output"><i>Italic Text</i></div>
+    <div class="code">&lt;em&gt;Emphasized Text&lt;/em&gt;</div>
+    <div class="output"><em>Emphasized Text</em></div>
+    <div class="explanation">
+      <strong>&lt;i&gt;</strong> — makes text italic for visual style (e.g., names, thoughts, foreign words).  
+      <strong>&lt;em&gt;</strong> — means “emphasized” — conveys stress or importance.  
+      Screen readers even <em>change tone</em> for &lt;em&gt; tags.  
+      ✅ <em>Use &lt;i&gt; for appearance, &lt;em&gt; for semantic emphasis.</em>
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>3. &lt;u&gt; Underline &lt;mark&gt; Highlight</h2>
+    <div class="code">&lt;u&gt;Underlined text&lt;/u&gt;</div>
+    <div class="output"><u>Underlined text</u></div>
+    <div class="code">&lt;mark&gt;Highlighted text&lt;/mark&gt;</div>
+    <div class="output"><mark>Highlighted text</mark></div>
+    <div class="explanation">
+      <strong>&lt;u&gt;</strong> — simply underlines text; it’s <em>non-semantic</em> (used rarely, may confuse with links).  
+      <strong>&lt;mark&gt;</strong> — <em>highlights text</em> to show importance or relevance (e.g., search results).  
+      ✅ Prefer <mark>&lt;mark&gt;</mark> for emphasis highlighting.
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>4. &lt;small&gt; Small Text</h2>
+    <div class="code">&lt;small&gt;This is small text&lt;/small&gt;</div>
+    <div class="output"><small>This is small text</small></div>
+    <div class="explanation">
+      Displays text slightly smaller, often used for <em>fine print</em>, disclaimers, or copyright notices.
+      Example: <small>© 2025 All Rights Reserved.</small>
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>5. &lt;del&gt; Deleted &lt;ins&gt; Inserted</h2>
+    <div class="code">&lt;del&gt;Old text&lt;/del&gt; &lt;ins&gt;New text&lt;/ins&gt;</div>
+    <div class="output"><del>Old text</del> <ins>New text</ins></div>
+    <div class="explanation">
+      <strong>&lt;del&gt;</strong> shows removed text with a strike line.  
+      <strong>&lt;ins&gt;</strong> shows newly added text.  
+      Commonly used in document revisions or change tracking.
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>6. &lt;sub&gt; Subscript &lt;sup&gt; Superscript</h2>
+    <div class="code">H&lt;sub&gt;2&lt;/sub&gt;O</div>
+    <div class="output">H<sub>2</sub>O</div>
+    <div class="code">x&lt;sup&gt;2&lt;/sup&gt;</div>
+    <div class="output">x<sup>2</sup></div>
+    <div class="explanation">
+      <strong>&lt;sub&gt;</strong> — lowers text (for chemical formulas, footnotes).  
+      <strong>&lt;sup&gt;</strong> — raises text (for exponents, ordinals).  
+      Example: E = mc<sup>2</sup>
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>7. &lt;abbr&gt; Abbreviation</h2>
+    <div class="code">&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</div>
+    <div class="output"><abbr title="HyperText Markup Language">HTML</abbr></div>
+    <div class="explanation">
+      Defines an abbreviation. The <code>title</code> attribute shows full form on hover.  
+      ✅ Improves accessibility and SEO.
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>8. &lt;q&gt; Short Quote &lt;blockquote&gt; Long Quote</h2>
+    <div class="code">&lt;q&gt;Practice makes perfect&lt;/q&gt;</div>
+    <div class="output">He said, <q>Practice makes perfect.</q></div>
+    <div class="code">
+      &lt;blockquote cite="https://example.com"&gt;<br>
+      "This is a long quotation."<br>
+      &lt;/blockquote&gt;
+    </div>
+    <div class="output">
+      <blockquote>"This is a long quotation."</blockquote>
+    </div>
+    <div class="explanation">
+      <strong>&lt;q&gt;</strong> — short inline quote (browser adds quotes automatically).  
+      <strong>&lt;blockquote&gt;</strong> — block-level quote, used for longer citations.  
+      You can add <code>cite=""</code> to reference the source.
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>9. &lt;cite&gt; Citation</h2>
+    <div class="code">&lt;cite&gt;The Great Gatsby&lt;/cite&gt;</div>
+    <div class="output"><cite>The Great Gatsby</cite></div>
+    <div class="explanation">
+      Defines the <em>title of a work</em> (book, film, artwork, article).  
+      ✅ Example: <cite>Avengers: Endgame</cite> (movie title).
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>10. &lt;code&gt; &lt;pre&gt;</h2>
+    <div class="code">&lt;code&gt;console.log("Hello");&lt;/code&gt;</div>
+    <div class="output">Use <code>console.log("Hello");</code></div>
+    <div class="code">
+      &lt;pre&gt;<br>
+      function greet() {<br>
+      &nbsp;&nbsp;console.log("Hello World");<br>
+      }<br>
+      &lt;/pre&gt;
+    </div>
+    <div class="output">
+      <pre>
+function greet() {
+  console.log("Hello World");
+}
+      </pre>
+    </div>
+    <div class="explanation">
+      <strong>&lt;code&gt;</strong> — inline code (small code fragments).  
+      <strong>&lt;pre&gt;</strong> — preserves spaces and line breaks (for larger blocks).  
+      ✅ Usually used together for displaying code examples.
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>11. &lt;kbd&gt; Keyboard Input &lt;samp&gt; Output</h2>
+    <div class="code">&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;S&lt;/kbd&gt;</div>
+    <div class="output">Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save</div>
+    <div class="code">&lt;samp&gt;Hello User&lt;/samp&gt;</div>
+    <div class="output">Program output: <samp>Hello User</samp></div>
+    <div class="explanation">
+      <strong>&lt;kbd&gt;</strong> — represents keys or user input (keyboard).  
+      <strong>&lt;samp&gt;</strong> — shows sample output from a computer or program.  
+      ✅ Used in tech documentation or tutorials.
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h2>12. &lt;var&gt; Variable &lt;s&gt; Strikethrough</h2>
+    <div class="code">Area = &lt;var&gt;length&lt;/var&gt; × &lt;var&gt;width&lt;/var&gt;</div>
+    <div class="output">Area = <var>length</var> × <var>width</var></div>
+    <div class="code">&lt;s&gt;Old price&lt;/s&gt; New price</div>
+    <div class="output"><s>Old price</s> New price</div>
+    <div class="explanation">
+      <strong>&lt;var&gt;</strong> — represents mathematical or programming variables.  
+      <strong>&lt;s&gt;</strong> — shows text as no longer accurate or relevant.  
+      Example: <s>₹1000</s> ₹800 (discounted).
+    </div>
+  </div>
+
+  <button><a href="three.html">Next-></a></button>
+
+</main>
+</body>
+</html>

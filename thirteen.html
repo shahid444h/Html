@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML IDs & Classes – Complete Guide</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 30px; line-height: 1.6; background: #f9f9f9; color: #333; }
+  h1 { color: #2c3e50; border-bottom: 3px solid #3498db; display: inline-block; padding-bottom: 5px; }
+  h2 { color: #2980b9; margin-top: 25px; }
+  h3 { color: #16a085; margin-top: 20px; }
+  pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 6px; overflow-x: auto; }
+  code { font-family: Consolas, monospace; }
+  .live-output { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+  .explanation { background: #ecf0f1; padding: 10px; border-radius: 6px; margin-top: 10px; }
+  .highlight { background-color: yellow; }
+  .bold { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>HTML IDs & Classes – Complete Guide</h1>
+
+<div class="section">
+<h2>1. What are IDs and Classes?</h2>
+<p>In HTML, <b>IDs</b> and <b>classes</b> are used to identify elements for styling with CSS or manipulation with JavaScript.</p>
+
+<ul>
+  <li><b>ID:</b> A unique identifier for a single element. Only one per page.</li>
+  <li><b>Class:</b> A reusable identifier. Multiple elements can share the same class.</li>
+</ul>
+
+<div class="explanation">
+<b>Explanation:</b> Use IDs when you want to target a single element uniquely. Use classes when you want to style or select multiple elements in the same way.
+</div>
+</div>
+
+<div class="section">
+<h2>2. ID Example</h2>
+<h3>HTML Code:</h3>
+<pre>
+&lt;p id="unique-paragraph"&gt;This paragraph has an ID "unique-paragraph".&lt;/p&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<div class="live-output">
+  <p id="unique-paragraph" style="color:red;">This paragraph has an ID "unique-paragraph".</p>
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> The ID is unique. In CSS: <code>#unique-paragraph { color: red; }</code>.  
+In JavaScript: <code>document.getElementById("unique-paragraph")</code>.
+</div>
+</div>
+
+<div class="section">
+<h2>3. Class Example</h2>
+<h3>HTML Code:</h3>
+<pre>
+&lt;p class="highlight"&gt;This is a paragraph with class "highlight".&lt;/p&gt;
+&lt;p class="highlight"&gt;Another paragraph sharing the same class.&lt;/p&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<div class="live-output">
+  <p class="highlight" style="background-color:yellow;">This is a paragraph with class "highlight".</p>
+  <p class="highlight" style="background-color:yellow;">Another paragraph sharing the same class.</p>
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> Multiple elements can have the same class. CSS: <code>.highlight { background-color: yellow; }</code>.  
+JavaScript: <code>document.getElementsByClassName("highlight")</code>.
+</div>
+</div>
+
+<div class="section">
+<h2>4. Multiple Classes</h2>
+<h3>HTML Code:</h3>
+<pre>
+&lt;p class="highlight bold"&gt;This paragraph has two classes: "highlight" and "bold".&lt;/p&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<div class="live-output">
+  <p class="highlight bold" style="background-color:yellow; font-weight:bold;">This paragraph has two classes: "highlight" and "bold".</p>
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> Assign multiple classes by separating them with spaces. Each class can apply its own style.
+</div>
+</div>
+
+<div class="section">
+<h2>5. Key Differences Between ID & Class</h2>
+<h3>HTML Code:</h3>
+<pre>
+&lt;table border="1" cellpadding="5"&gt;
+  &lt;tr&gt;&lt;th&gt;Property&lt;/th&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Class&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Uniqueness&lt;/td&gt;&lt;td&gt;Unique, only one per page&lt;/td&gt;&lt;td&gt;Can be used on multiple elements&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Selector in CSS&lt;/td&gt;&lt;td&gt;#idName&lt;/td&gt;&lt;td&gt;.className&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Use in JS&lt;/td&gt;&lt;td&gt;document.getElementById("idName")&lt;/td&gt;&lt;td&gt;document.getElementsByClassName("className")&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<div class="live-output">
+<table border="1" cellpadding="5">
+  <tr><th>Property</th><th>ID</th><th>Class</th></tr>
+  <tr><td>Uniqueness</td><td>Unique, only one per page</td><td>Can be used on multiple elements</td></tr>
+  <tr><td>Selector in CSS</td><td>#idName</td><td>.className</td></tr>
+  <tr><td>Use in JS</td><td>document.getElementById("idName")</td><td>document.getElementsByClassName("className")</td></tr>
+</table>
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> IDs are unique and targeted with <code>#id</code>, classes are reusable and targeted with <code>.class</code>. Choose wisely depending on use-case.
+</div>
+</div>
+<button><a href="fourteen.html">Next-></a></button>
+</body>
+</html>

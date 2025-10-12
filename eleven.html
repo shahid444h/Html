@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Block vs Inline Elements</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#f4f4f4; color:#333; margin:30px; line-height:1.7; }
+  h1 { color:#2c3e50; border-bottom:3px solid #3498db; display:inline-block; padding-bottom:5px; }
+  h2 { color:#2980b9; margin-top:30px; }
+  h3 { color:#16a085; margin-top:20px; }
+  pre { background:#272822; color:#f8f8f2; padding:15px; border-radius:6px; overflow-x:auto; margin-top:10px; }
+  code { font-family: Consolas, monospace; color:#e67e22; }
+  .section { margin-bottom:50px; }
+  .live-output { background:#fff; padding:15px; border-radius:8px; margin-bottom:20px; box-shadow:0 0 5px rgba(0,0,0,0.1); }
+  .explanation { background:#ecf0f1; padding:12px; border-radius:6px; margin-top:10px; }
+  img { vertical-align:middle; }
+  table { border-collapse: collapse; margin-top:10px; }
+  table, th, td { border:1px solid black; padding:5px; }
+  .selfclosing { color:#c0392b; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<h1>HTML Block vs Inline Elements</h1>
+
+<!-- Section 1: Tag Types -->
+<div class="section">
+<h2>1. HTML Tag Types: Paired vs Self-Closing</h2>
+<p>
+HTML elements are either <b>paired tags</b> or <b>self-closing tags</b>:
+</p>
+
+<h3>Paired Tags (Start and End Tags)</h3>
+<p>Most elements have a start tag and an end tag:</p>
+<pre>
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;div&gt;Container&lt;/div&gt;
+&lt;h1&gt;Heading&lt;/h1&gt;
+&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;
+</pre>
+<p class="explanation"><b>Explanation:</b> Paired tags enclose content and define its meaning.</p>
+
+<h3>Self-Closing Tags</h3>
+<p>Some elements do not have content and are written as self-closing:</p>
+<pre>
+&lt;br /&gt;  Line break
+&lt;hr /&gt;  Horizontal line
+&lt;img src="image.jpg" alt="image" /&gt;  Image
+&lt;input type="text" /&gt;  Input field
+&lt;meta charset="UTF-8" /&gt;  Metadata
+&lt;link rel="stylesheet" href="style.css" /&gt;  Stylesheet link
+</pre>
+<p class="explanation"><b>Explanation:</b> Self-closing tags do not wrap content and always end with <code>/&gt;</code>. Modern HTML allows just <code>&lt;br&gt;</code> without slash, but <code>/</code> is explicit.</p>
+</div>
+
+<!-- Section 2: Headings -->
+<div class="section">
+<h2>2. Headings: &lt;h1&gt; - &lt;h6&gt;</h2>
+<p>Headings define document hierarchy. They are <b>block elements</b> and start on a new line:</p>
+
+<h3>Code:</h3>
+<pre>
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<div class="live-output">
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> Headings are block elements, always starting on a new line, and help structure your page for readability and SEO.
+</div>
+</div>
+
+<!-- Section 3: Block Elements -->
+<div class="section">
+<h2>3. Common Block Elements</h2>
+<p>Block elements occupy full width and start on a new line. They can contain inline and other block elements:</p>
+
+<h3>Code:</h3>
+<pre>
+&lt;div&gt;Container&lt;/div&gt;
+&lt;section&gt;Section&lt;/section&gt;
+&lt;article&gt;Article&lt;/article&gt;
+&lt;header&gt;Header&lt;/header&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;
+&lt;nav&gt;Navigation&lt;/nav&gt;
+&lt;pre&gt;Preformatted text&lt;/pre&gt;
+&lt;blockquote&gt;Quote&lt;/blockquote&gt;
+&lt;hr /&gt; Horizontal line
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;Cell&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ol&gt;
+&lt;form&gt;Form elements&lt;/form&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<div class="live-output">
+  <div style="border:1px solid black; padding:5px;">Div container</div>
+  <section style="border:1px solid blue; padding:5px;">Section content</section>
+  <article style="border:1px solid green; padding:5px;">Article content</article>
+  <header style="border:1px solid red; padding:5px;">Header</header>
+  <footer style="border:1px solid purple; padding:5px;">Footer</footer>
+  <nav style="border:1px dashed orange; padding:5px;">Navigation</nav>
+  <pre>Preformatted text</pre>
+  <blockquote>Quote block</blockquote>
+  <hr>
+  <table><tr><td>Table cell</td></tr></table>
+  <ul><li>Item 1</li><li>Item 2</li></ul>
+  <ol><li>First</li><li>Second</li></ol>
+  <form>
+    Name: <input type="text" placeholder="Enter name"><br>
+    Email: <input type="email" placeholder="Enter email">
+  </form>
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> Block elements are the core of page layout. They can contain inline and other block elements.
+</div>
+</div>
+
+<!-- Section 4: Inline Elements -->
+<div class="section">
+<h2>4. Common Inline Elements</h2>
+<p>Inline elements stay inside the text flow and occupy only the width of their content:</p>
+
+<h3>Code:</h3>
+<pre>
+&lt;span&gt;Text&lt;/span&gt;
+&lt;a href="#"&gt;Link&lt;/a&gt;
+&lt;strong&gt;Strong&lt;/strong&gt;
+&lt;b&gt;Bold&lt;/b&gt;
+&lt;em&gt;Italic&lt;/em&gt;
+&lt;i&gt;Italic&lt;/i&gt;
+&lt;u&gt;Underline&lt;/u&gt;
+&lt;sub&gt;Subscript&lt;/sub&gt;
+&lt;sup&gt;Superscript&lt;/sup&gt;
+&lt;mark&gt;Highlight&lt;/mark&gt;
+&lt;img src="image.jpg" alt="Image" /&gt;
+&lt;br /&gt;
+&lt;code&gt;Code&lt;/code&gt;
+&lt;kbd&gt;Keyboard&lt;/kbd&gt;
+&lt;samp&gt;Sample&lt;/samp&gt;
+&lt;var&gt;Variable&lt;/var&gt;
+&lt;time&gt;Time&lt;/time&gt;
+&lt;input type="text" /&gt;
+&lt;label&gt;Label&lt;/label&gt;
+&lt;button&gt;Button&lt;/button&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<div class="live-output">
+  <p>
+    <span>Span text</span>,
+    <a href="#">Link</a>,
+    <strong>Strong</strong>,
+    <b>Bold</b>,
+    <em>Italic</em>,
+    <i>Italic</i>,
+    <u>Underline</u>,
+    <sub>Subscript</sub>,
+    <sup>Superscript</sup>,
+    <mark>Highlight</mark>
+  </p>
+  <p>
+    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="logo" width="50"> Image
+    <br>Line break
+  </p>
+  <p>
+    <code>Code</code>, <kbd>Keyboard</kbd>, <samp>Sample</samp>, <var>Variable</var>, <time>Time</time>
+  </p>
+  <p>
+    <label>Label:</label>
+    <input type="text" placeholder="Input box">
+    <button>Button</button>
+  </p>
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> Inline elements are used for text formatting, small components, or inputs. Self-closing inline tags include <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;input&gt;</code>.
+</div>
+</div>
+
+<!-- Section 5: Key Differences -->
+<div class="section">
+<h2>5. Key Differences Between Block & Inline</h2>
+<table>
+<tr><th>Property</th><th>Block</th><th>Inline</th></tr>
+<tr><td>Start Line</td><td>New line</td><td>Same line</td></tr>
+<tr><td>Width</td><td>Full width</td><td>Width of content</td></tr>
+<tr><td>Can contain</td><td>Inline & Block</td><td>Only Inline</td></tr>
+<tr><td>Examples</td><td>div, section, p, h1-h6, article, header, footer</td><td>span, a, b, i, img, input, code</td></tr>
+<tr><td>Self-closing tags</td><td>hr, br, img, input</td><td>br, img, input</td></tr>
+</table>
+
+<div class="explanation">
+Block elements are used for layout and structure, while inline elements format content inside blocks. Self-closing tags never wrap content and exist alone.
+</div>
+</div>
+<button><a href="twelve.html"></a></button>
+</body>
+</html>

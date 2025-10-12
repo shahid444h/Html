@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Head Essentials: Interactive Guide</title>
+
+<!-- 1. Responsive Viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Explanation:
+  - Makes webpage responsive on all devices
+  - width=device-width → page width = device width
+  - initial-scale=1.0 → initial zoom
+-->
+
+<!-- 2. Favicon -->
+<link rel="icon" href="https://www.w3schools.com/images/w3schools_green.jpg" type="image/png">
+<!-- Explanation: Small icon in browser tab -->
+
+<!-- 3. SEO Meta Tags -->
+<meta name="description" content="Interactive HTML Head Tags Tutorial">
+<meta name="keywords" content="HTML, meta tags, SEO, favicon, viewport">
+<meta name="author" content="Your Name">
+<!-- Explanation: description, keywords, author -->
+
+<style>
+  body { font-family: Arial, sans-serif; margin: 30px; background:#f4f6f8; color:#333; }
+  h1 { color:#2c3e50; border-bottom: 3px solid #3498db; display:inline-block; padding-bottom:6px; }
+  h2 { color:#2980b9; margin-top:30px; }
+  pre { background:#272822; color:#f8f8f2; padding:15px; border-radius:6px; overflow-x:auto; }
+  code { font-family: Consolas, monospace; }
+  .live-output { background:#fff; padding:15px; border-radius:8px; margin-bottom:20px; box-shadow:0 0 8px rgba(0,0,0,0.1); }
+  .explanation { background:#ecf0f1; padding:12px; border-radius:6px; margin-top:10px; }
+  button { padding:8px 15px; margin-top:5px; cursor:pointer; font-size:14px; }
+</style>
+</head>
+<body>
+
+<h1>HTML Head Essentials – Interactive Guide</h1>
+
+<!-- 1. Responsive Viewport -->
+<h2>1. Responsive Viewport</h2>
+<p>
+  The <code>&lt;meta name="viewport"&gt;</code> tag ensures your page adapts to different screen sizes.
+</p>
+
+<div class="live-output" id="viewport-output">
+  Resize this browser window to see how content responds dynamically!
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> width=device-width sets page width equal to device width. initial-scale=1.0 sets default zoom. Essential for mobile-friendly pages.
+</div>
+
+<pre>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</pre>
+
+<!-- 2. Favicon -->
+<h2>2. Favicon</h2>
+<p>The favicon appears in the browser tab. Example:</p>
+
+<div class="live-output">
+  <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="Favicon Example" width="50">
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> Add a favicon using <code>&lt;link rel="icon" href="favicon.png" type="image/png"&gt;</code>.
+</div>
+
+<pre>
+&lt;link rel="icon" href="favicon.png" type="image/png"&gt;
+</pre>
+
+<!-- Interactive Favicon Change -->
+<button id="changeFavicon">Change Favicon</button>
+<div class="explanation">
+Click the button to dynamically change the favicon using JavaScript!
+</div>
+
+<!-- 3. SEO Meta Tags -->
+<h2>3. SEO Meta Tags</h2>
+<p>
+SEO meta tags improve search engine visibility.
+<ul>
+  <li><b>Description:</b> Short summary of your page</li>
+  <li><b>Keywords:</b> Important keywords for content</li>
+  <li><b>Author:</b> Your name</li>
+</ul>
+</p>
+
+<div class="live-output" id="seo-output">
+  Meta description: Interactive HTML Head Tags Tutorial
+</div>
+
+<div class="explanation">
+<b>Explanation:</b> Search engines use these tags to understand page content. You can dynamically update them with JS.
+</div>
+
+<pre>
+&lt;meta name="description" content="Interactive HTML Head Tags Tutorial"&gt;
+&lt;meta name="keywords" content="HTML, meta tags, SEO, favicon, viewport"&gt;
+&lt;meta name="author" content="Your Name"&gt;
+</pre>
+
+<!-- Interactive Meta Tag Change -->
+<label for="newDescription">New Description: </label>
+<input type="text" id="newDescription" placeholder="Enter new description">
+<button id="updateMeta">Update Meta Description</button>
+<p id="metaOutput"></p>
+<button><a href="one.html">Home-></a></button>
+<!-- JavaScript -->
+<script>
+  // Interactive Favicon Change
+  document.getElementById('changeFavicon').addEventListener('click', () => {
+    const link = document.querySelector("link[rel*='icon']");
+    link.href = "https://www.w3schools.com/images/w3schools_red.jpg";
+    alert("Favicon changed!");
+  });
+
+  // Interactive Meta Description Update
+  document.getElementById('updateMeta').addEventListener('click', () => {
+    const newDesc = document.getElementById('newDescription').value;
+    const metaDesc = document.querySelector("meta[name='description']");
+    metaDesc.setAttribute("content", newDesc);
+    document.getElementById('metaOutput').innerText = `Meta description updated to: "${newDesc}"`;
+  });
+
+  // Dynamic viewport output
+  const viewportOutput = document.getElementById('viewport-output');
+  window.addEventListener('resize', () => {
+    viewportOutput.innerText = `Current width: ${window.innerWidth}px, height: ${window.innerHeight}px`;
+  });
+</script>
+
+</body>
+</html>

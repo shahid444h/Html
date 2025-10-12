@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Images</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9fb;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #0078d7, #00bcd4);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    main {
+      padding: 2rem 5%;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2, h3 {
+      color: #0078d7;
+    }
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+    }
+    code {
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: #d63384;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    footer {
+      background: #0078d7;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+      border-top: 5px solid #00bcd4;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HTML Images – Ultimate Guide</h1>
+    <p>Learn everything about displaying and styling images using HTML.</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>1. What are Images in HTML?</h2>
+      <p>
+        The <code>&lt;img&gt;</code> tag is used to embed images in a webpage.  
+        It is a **self-closing tag** (doesn’t need a closing tag).  
+        Minimum required attributes: <code>src</code> (source) and <code>alt</code> (alternative text).  
+      </p>
+      <pre><code>&lt;img src="image.jpg" alt="Description of image"&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>2. Important Attributes of &lt;img&gt;</h2>
+
+      <h3>a) src – Source of Image</h3>
+      <p>
+        The <code>src</code> (source) attribute defines the image path or URL.  
+        It tells the browser where to find the image.
+      </p>
+      <pre><code>&lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="Example Image"&gt;</code></pre>
+      <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="Example Image">
+
+      <h3>b) alt – Alternative Text</h3>
+      <p>
+        The <code>alt</code> attribute specifies text to display if the image fails to load.  
+        It is **important for accessibility** (screen readers read this for visually impaired users) and **SEO**.
+      </p>
+      <pre><code>&lt;img src="wrongname.jpg" alt="This is an alternate text"&gt;</code></pre>
+      <img src="wrongname.jpg" alt="This is an alternate text">
+
+      <h3>c) width & height – Image Dimensions</h3>
+      <p>
+        Define the image size in pixels.  
+        It’s better to use **CSS for responsive images**, but HTML attributes also work for fixed sizes.
+      </p>
+      <pre><code>&lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" width="200" height="100" alt="Resized Image"&gt;</code></pre>
+      <img src="https://www.w3schools.com/images/w3schools_green.jpg" width="200" height="100" alt="Resized Image">
+
+      <h3>d) title – Tooltip Text</h3>
+      <p>
+        Displays a tooltip when you hover over the image.  
+        It helps describe the image in brief.
+      </p>
+      <pre><code>&lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" title="This is a tooltip" alt="Tooltip Example"&gt;</code></pre>
+      <img src="https://www.w3schools.com/images/w3schools_green.jpg" title="This is a tooltip" alt="Tooltip Example">
+
+      <h3>e) loading – Lazy Loading</h3>
+      <p>
+        Controls when an image loads.  
+        Values:
+        <ul>
+          <li><code>lazy</code> – loads only when image appears in view (saves data)</li>
+          <li><code>eager</code> – loads immediately</li>
+          <li><code>auto</code> – browser decides automatically</li>
+        </ul>
+      </p>
+      <pre><code>&lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" loading="lazy" alt="Lazy Loaded Image"&gt;</code></pre>
+      <img src="https://www.w3schools.com/images/w3schools_green.jpg" loading="lazy" alt="Lazy Loaded Image">
+
+    </section>
+
+    <section>
+      <h2>3. Semantic Images – &lt;figure&gt; and &lt;figcaption&gt;</h2>
+      <p>
+        The <code>&lt;figure&gt;</code> element groups media content (like images or videos) with a caption.  
+        The <code>&lt;figcaption&gt;</code> tag provides a description or title for that image.  
+        These are **semantic elements** that improve accessibility and SEO.
+      </p>
+      <pre><code>&lt;figure&gt;
+  &lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="HTML Image Example"&gt;
+  &lt;figcaption&gt;Figure 1: W3Schools Logo&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+      <figure>
+        <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="HTML Image Example">
+        <figcaption>Figure 1: W3Schools Logo</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>4. Best Practices</h2>
+      <ul>
+        <li>Always use descriptive <code>alt</code> text for accessibility.</li>
+        <li>Use relative paths for local images, absolute URLs for external images.</li>
+        <li>Optimize image size to improve loading speed.</li>
+        <li>Use <code>figure</code> and <code>figcaption</code> for meaningful captions.</li>
+        <li>Use <code>loading="lazy"</code> for performance optimization.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Ultimate HTML Guide – Created for Learners like You ❤️</p>
+  </footer>
+  <button><a href="six.html">Next-></a></button>
+</body>
+</html>

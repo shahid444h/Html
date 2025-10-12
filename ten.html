@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Forms</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    margin: 30px;
+    line-height: 1.6;
+  }
+  h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 5px; display: inline-block; }
+  h2 { color: #2980b9; margin-top: 25px; }
+  h3 { color: #16a085; margin-top: 20px; }
+  pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-top: 10px;
+  }
+  code { font-family: Consolas, monospace; }
+  form { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+  label { display: inline-block; width: 150px; margin-bottom: 10px; }
+  input, select, textarea { padding: 5px; margin-bottom: 10px; width: 200px; }
+  input[type="submit"], input[type="reset"] { width: auto; background: #3498db; color: #fff; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+  input[type="submit"]:hover, input[type="reset"]:hover { background: #2980b9; }
+  ul li { margin-bottom: 5px; }
+  .section { margin-bottom: 40px; }
+  .explanation { background: #ecf0f1; padding: 10px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<h1>HTML Forms – Complete Guide with Highlighted Code</h1>
+
+<div class="section">
+<h2>1. Basic Form Example</h2>
+
+<h3>HTML Code (Full Form HTML):</h3>
+<pre>
+&lt;form action="submit_form.php" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<form action="submit_form.php" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<div class="explanation">
+<b>Explanation:</b> <br>
+- <code>action</code> → URL where form data will be sent. <br>
+- <code>method</code> → GET or POST. POST hides data, GET shows in URL. <br>
+- <code>required</code> → Makes input mandatory.
+</div>
+</div>
+
+<div class="section">
+<h2>2. Various Input Types Example</h2>
+
+<h3>HTML Code (Full Form HTML):</h3>
+<pre>
+&lt;form action="https://httpbin.org/post" method="post" target="_blank"&gt;
+  &lt;label&gt;Username:&lt;/label&gt;
+  &lt;input type="text" name="username" placeholder="Enter username" required&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Password:&lt;/label&gt;
+  &lt;input type="password" name="password" placeholder="Enter password" required&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Gender:&lt;/label&gt;
+  &lt;input type="radio" name="gender" value="male"&gt; Male
+  &lt;input type="radio" name="gender" value="female"&gt; Female&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Hobbies:&lt;/label&gt;
+  &lt;input type="checkbox" name="hobbies" value="reading"&gt; Reading
+  &lt;input type="checkbox" name="hobbies" value="gaming"&gt; Gaming
+  &lt;input type="checkbox" name="hobbies" value="travel"&gt; Travel&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Birthday:&lt;/label&gt;
+  &lt;input type="date" name="birthday"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Favorite Color:&lt;/label&gt;
+  &lt;input type="color" name="color"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Quantity (1-10):&lt;/label&gt;
+  &lt;input type="number" name="quantity" min="1" max="10"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;input type="submit" value="Submit"&gt;
+  &lt;input type="reset" value="Reset"&gt;
+&lt;/form&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<form action="https://httpbin.org/post" method="post" target="_blank">
+  <label>Username:</label>
+  <input type="text" name="username" placeholder="Enter username" required><br><br>
+
+  <label>Password:</label>
+  <input type="password" name="password" placeholder="Enter password" required><br><br>
+
+  <label>Gender:</label>
+  <input type="radio" name="gender" value="male"> Male
+  <input type="radio" name="gender" value="female"> Female<br><br>
+
+  <label>Hobbies:</label>
+  <input type="checkbox" name="hobbies" value="reading"> Reading
+  <input type="checkbox" name="hobbies" value="gaming"> Gaming
+  <input type="checkbox" name="hobbies" value="travel"> Travel<br><br>
+
+  <label>Birthday:</label>
+  <input type="date" name="birthday"><br><br>
+
+  <label>Favorite Color:</label>
+  <input type="color" name="color"><br><br>
+
+  <label>Quantity (1-10):</label>
+  <input type="number" name="quantity" min="1" max="10"><br><br>
+
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset">
+</form>
+
+<div class="explanation">
+<b>Explanation:</b> Shows text, password, radio, checkbox, date, color, number, submit, reset inputs. <br>
+Attributes like <code>min</code>, <code>max</code>, <code>placeholder</code>, and <code>required</code> ensure proper user input.
+</div>
+</div>
+
+<div class="section">
+<h2>3. GET Method Example</h2>
+
+<h3>HTML Code (Full Form HTML):</h3>
+<pre>
+&lt;form action="https://httpbin.org/get" method="get" target="_blank"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;input type="submit" value="Submit via GET"&gt;
+&lt;/form&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<form action="https://httpbin.org/get" method="get" target="_blank">
+  <label>Name:</label>
+  <input type="text" name="name"><br><br>
+
+  <label>Email:</label>
+  <input type="email" name="email"><br><br>
+
+  <input type="submit" value="Submit via GET">
+</form>
+
+<div class="explanation">
+<b>Explanation:</b> GET appends data to URL as query parameters. Example URL: <code>?name=John&email=john@example.com</code>. Visible in browser URL.
+</div>
+</div>
+
+<div class="section">
+<h2>4. POST Method Example</h2>
+
+<h3>HTML Code (Full Form HTML):</h3>
+<pre>
+&lt;form action="https://httpbin.org/post" method="post" target="_blank"&gt;
+  &lt;label for="username"&gt;Username:&lt;/label&gt;
+  &lt;input type="text" id="username" name="username"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label for="password"&gt;Password:&lt;/label&gt;
+  &lt;input type="password" id="password" name="password"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;input type="submit" value="Submit via POST"&gt;
+&lt;/form&gt;
+</pre>
+
+<h3>Live Output:</h3>
+<form action="https://httpbin.org/post" method="post" target="_blank">
+  <label>Username:</label>
+  <input type="text" name="username"><br><br>
+
+  <label>Password:</label>
+  <input type="password" name="password"><br><br>
+
+  <input type="submit" value="Submit via POST">
+</form>
+
+<div class="explanation">
+<b>Explanation:</b> POST sends data in the request body. URL does not show data. Safer for sensitive info like passwords.
+</div>
+</div>
+<button><a href="eleven.html">Next-></a></button>
+</body>
+</html>

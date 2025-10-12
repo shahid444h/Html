@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Tables </title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 40px;
+      background-color: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      text-transform: uppercase;
+      border-bottom: 3px solid #3498db;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+    }
+    h3 {
+      color: #16a085;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 4px;
+      color: #c7254e;
+    }
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      margin: 20px auto;
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 10px;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .example {
+      background: #ecf0f1;
+      padding: 15px;
+      border-left: 5px solid #3498db;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>HTML Tables – Complete Notes</h1>
+
+<h2>1. Definition</h2>
+<p>
+  Tables in HTML are used to represent data in a structured form of rows and columns.
+  The basic table structure is created using:
+</p>
+<ul>
+  <li><code>&lt;table&gt;</code> – Defines the table.</li>
+  <li><code>&lt;tr&gt;</code> – Table Row (each horizontal row).</li>
+  <li><code>&lt;th&gt;</code> – Table Header cell (bold, centered by default).</li>
+  <li><code>&lt;td&gt;</code> – Table Data cell (normal data cell).</li>
+</ul>
+
+<h3>📘 Basic Syntax</h3>
+<pre class="example">
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Heading 1&lt;/th&gt;
+    &lt;th&gt;Heading 2&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row 1 Data 1&lt;/td&gt;
+    &lt;td&gt;Row 1 Data 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<h3>💡 Output:</h3>
+<table>
+  <tr>
+    <th>Heading 1</th>
+    <th>Heading 2</th>
+  </tr>
+  <tr>
+    <td>Row 1 Data 1</td>
+    <td>Row 1 Data 2</td>
+  </tr>
+</table>
+
+<p><b>Explanation:</b> <code>&lt;th&gt;</code> cells appear bold and centered automatically, while <code>&lt;td&gt;</code> are normal data cells.</p>
+
+<!-- ATTRIBUTES -->
+<h2>2. Important Table Attributes</h2>
+<ul>
+  <li><b>border</b> – Defines the border thickness (e.g. <code>border="1"</code>).</li>
+  <li><b>cellpadding</b> – Space between cell content and cell border (e.g. <code>cellpadding="10"</code>).</li>
+  <li><b>cellspacing</b> – Space between individual table cells.</li>
+  <li><b>width</b> and <b>height</b> – Set the table dimensions.</li>
+  <li><b>bgcolor</b> – Sets the background color of the table.</li>
+  <li><b>align</b> – Aligns the table (<code>left</code>, <code>center</code>, <code>right</code>).</li>
+</ul>
+
+<h3>📘 Example – Table with Attributes</h3>
+<pre class="example">
+&lt;table border="2" cellpadding="10" cellspacing="5" width="70%" bgcolor="#f9f9f9" align="center"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Product&lt;/th&gt;
+    &lt;th&gt;Quantity&lt;/th&gt;
+    &lt;th&gt;Price&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Laptop&lt;/td&gt;
+    &lt;td&gt;5&lt;/td&gt;
+    &lt;td&gt;$5000&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Mouse&lt;/td&gt;
+    &lt;td&gt;10&lt;/td&gt;
+    &lt;td&gt;$200&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<h3>💡 Output:</h3>
+<table border="2" cellpadding="10" cellspacing="5" width="70%" bgcolor="#f9f9f9" align="center">
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>Laptop</td>
+    <td>5</td>
+    <td>$5000</td>
+  </tr>
+  <tr>
+    <td>Mouse</td>
+    <td>10</td>
+    <td>$200</td>
+  </tr>
+</table>
+
+<p><b>Explanation:</b> This table is centered with custom padding, spacing, and background color for better readability.</p>
+
+<!-- ROWSPAN & COLSPAN -->
+<h2>3. Rowspan and Colspan</h2>
+<p>
+  These attributes are used to merge multiple cells either vertically or horizontally.
+</p>
+
+<ul>
+  <li><code>rowspan</code> – Merges cells vertically (across rows).</li>
+  <li><code>colspan</code> – Merges cells horizontally (across columns).</li>
+</ul>
+
+<h3>📘 Example:</h3>
+<pre class="example">
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th rowspan="2"&gt;Name&lt;/th&gt;
+    &lt;th colspan="2"&gt;Marks&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Math&lt;/th&gt;
+    &lt;th&gt;Science&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John&lt;/td&gt;
+    &lt;td&gt;80&lt;/td&gt;
+    &lt;td&gt;90&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<h3>💡 Output:</h3>
+<table border="1">
+  <tr>
+    <th rowspan="2">Name</th>
+    <th colspan="2">Marks</th>
+  </tr>
+  <tr>
+    <th>Math</th>
+    <th>Science</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>80</td>
+    <td>90</td>
+  </tr>
+</table>
+
+<p><b>Explanation:</b> “Marks” spans across 2 columns (colspan), and “Name” covers 2 rows (rowspan).</p>
+
+<!-- TABLE SECTIONS -->
+<h2>4. Table Sections – thead, tbody, tfoot</h2>
+<p>
+  Large tables can be divided into three logical parts:
+</p>
+<ul>
+  <li><code>&lt;thead&gt;</code> – Header section (column headings).</li>
+  <li><code>&lt;tbody&gt;</code> – Body section (main data rows).</li>
+  <li><code>&lt;tfoot&gt;</code> – Footer section (summary or totals).</li>
+</ul>
+
+<h3>📘 Example:</h3>
+<pre class="example">
+&lt;table border="1"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Month&lt;/th&gt;
+      &lt;th&gt;Sales&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;January&lt;/td&gt;
+      &lt;td&gt;$1000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;February&lt;/td&gt;
+      &lt;td&gt;$1200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Total&lt;/td&gt;
+      &lt;td&gt;$2200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+</pre>
+
+<h3>💡 Output:</h3>
+<table border="1">
+  <thead>
+    <tr><th>Month</th><th>Sales</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>January</td><td>$1000</td></tr>
+    <tr><td>February</td><td>$1200</td></tr>
+  </tbody>
+  <tfoot>
+    <tr><td>Total</td><td>$2200</td></tr>
+  </tfoot>
+</table>
+
+<p><b>Explanation:</b> Dividing tables semantically helps accessibility, readability, and styling using CSS.</p>
+
+<!-- CAPTION -->
+<h2>5. Caption Tag</h2>
+<p>
+  The <code>&lt;caption&gt;</code> tag adds a title to your table, displayed above it by default.
+</p>
+
+<h3>📘 Example:</h3>
+<pre class="example">
+&lt;table border="1"&gt;
+  &lt;caption&gt;Student Scores&lt;/caption&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Ava&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<h3>💡 Output:</h3>
+<table border="1">
+  <caption>Student Scores</caption>
+  <tr><th>Name</th><th>Score</th></tr>
+  <tr><td>Ava</td><td>95</td></tr>
+</table>
+
+<p><b>Explanation:</b> The <code>&lt;caption&gt;</code> provides a short description for the table content.</p>
+<button><a href="nine.html">Next-></a></button></body>
+</html>

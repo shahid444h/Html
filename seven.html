@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Iframes</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f8fc;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.7;
+    }
+    h1 {
+      text-align: center;
+      color: #0066cc;
+      background: #e6f0ff;
+      padding: 15px;
+      border-radius: 8px;
+      text-transform: uppercase;
+    }
+    h2 {
+      color: #004080;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+    h3 {
+      color: #0055aa;
+      margin-top: 20px;
+    }
+    code {
+      background: #eef3fb;
+      color: #c7254e;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    iframe {
+      display: block;
+      margin: 15px auto;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    ul {
+      background: #f9fcff;
+      border-left: 5px solid #007bff;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+    li { margin-bottom: 5px; }
+    .example-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin: 15px 0;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover { text-decoration: underline; }
+    .output-box {
+      background: #fafafa;
+      border: 1px dashed #aaa;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Iframes – Ultimate Complete Guide with Examples</h1>
+
+  <!-- 1. Definition -->
+  <h2>1. Definition</h2>
+  <p>
+    The <code>&lt;iframe&gt;</code> (Inline Frame) tag is used to embed another HTML document
+    or external website within your current page. It behaves like a small “browser window”
+    inside your main page.
+  </p>
+  <div class="example-box">
+    <b>Syntax:</b><br>
+    <code>&lt;iframe src="URL" width="600" height="400"&gt;&lt;/iframe&gt;</code>
+  </div>
+
+  <!-- 2. Basic Example -->
+  <h2>2. Basic Iframe Example</h2>
+  <p>Embedding an example page:</p>
+  <div class="example-box">
+    <code>&lt;iframe src="https://www.w3schools.com" width="600" height="400"&gt;&lt;/iframe&gt;</code>
+  </div>
+  <iframe src="https://www.w3schools.com" width="600" height="400"></iframe>
+  <p><b>Explanation:</b> The <code>src</code> specifies the webpage to embed. 
+     <code>width</code> and <code>height</code> set the visible area of the iframe.</p>
+
+  <!-- 3. Important Attributes -->
+  <h2>3. Important Attributes of &lt;iframe&gt;</h2>
+  <ul>
+    <li><b>src</b> – URL of the page to embed (Required)</li>
+    <li><b>width</b> & <b>height</b> – Define iframe size in pixels or percentage</li>
+    <li><b>title</b> – Describes the iframe content for screen readers</li>
+    <li><b>frameborder</b> – Controls border visibility (deprecated, use CSS)</li>
+    <li><b>allowfullscreen</b> – Enables fullscreen mode</li>
+    <li><b>loading</b> – Lazy or eager loading of iframe</li>
+    <li><b>name</b> – Used for targeting links to open inside iframe</li>
+    <li><b>sandbox</b> – Restricts iframe actions for security</li>
+  </ul>
+
+  <!-- 4. Example with Attributes -->
+  <h2>4. Example with All Attributes</h2>
+  <div class="example-box">
+    <code>
+      &lt;iframe src="https://www.w3schools.com" width="600" height="400"
+      title="W3Schools Example" frameborder="0" allowfullscreen loading="lazy"
+      name="exampleFrame" sandbox="allow-scripts allow-same-origin"&gt;&lt;/iframe&gt;
+    </code>
+  </div>
+  <iframe
+    src="https://www.w3schools.com"
+    width="600"
+    height="400"
+    title="W3Schools Example"
+    frameborder="0"
+    allowfullscreen
+    loading="lazy"
+    name="exampleFrame"
+    sandbox="allow-scripts allow-same-origin">
+  </iframe>
+  <p><b>Explanation:</b> This iframe has lazy loading, no border, supports fullscreen, 
+     allows scripts, and same-origin access — making it secure and optimized.</p>
+
+  <!-- 5. Target Example -->
+  <h2>5. Target Example – Opening Links inside an Iframe</h2>
+  <p>
+    The <code>name</code> attribute is used to load link pages into a specific iframe.
+    The <code>target</code> in the link matches that name.
+  </p>
+  <div class="example-box">
+    <code>
+      &lt;a href="https://www.w3schools.com/html/" target="exampleFrame"&gt;Open HTML Tutorial&lt;/a&gt;
+    </code>
+  </div>
+  <a href="https://www.w3schools.com/html/" target="exampleFrame">Open HTML Tutorial in Iframe</a>
+  <div class="output-box">
+    Clicking the above link loads the page inside the iframe above.
+  </div>
+
+  <!-- 6. Parent and Top Frame -->
+  <h2>6. Parent and Top Frame Targets</h2>
+  <p>
+    Iframes can interact with parent or top pages using special <code>target</code> values.
+  </p>
+  <ul>
+    <li><code>_parent</code> – Opens the link in the parent frame (one level up).</li>
+    <li><code>_top</code> – Breaks out of all iframes and opens the link in the full window.</li>
+  </ul>
+
+  <h3>Example for _parent</h3>
+  <div class="example-box">
+    <code>
+      &lt;a href="https://www.wikipedia.org" target="_parent"&gt;Open in Parent Frame&lt;/a&gt;
+    </code>
+  </div>
+  <p><b>Output:</b> When this code is inside an iframe and clicked, the link opens in its parent page instead of within the same iframe.</p>
+
+  <h3>Example for _top</h3>
+  <div class="example-box">
+    <code>
+      &lt;a href="https://www.google.com" target="_top"&gt;Open in Full Window&lt;/a&gt;
+    </code>
+  </div>
+  <p><b>Output:</b> This link opens the destination in the entire browser window, 
+  breaking out of any nested iframes.</p>
+
+  <!-- 7. Embedding YouTube -->
+  <h2>7. Embedding a YouTube Video</h2>
+  <div class="example-box">
+    <code>
+      &lt;iframe width="560" height="315" 
+      src="https://www.youtube.com/embed/tgbNymZ7vqY" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allowfullscreen&gt;&lt;/iframe&gt;
+    </code>
+  </div>
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/tgbNymZ7vqY"
+    title="YouTube video player"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+  <!-- 8. Responsive Iframe Example -->
+  <h2>8. Responsive Iframe (100% Width)</h2>
+  <div class="example-box">
+    <code>
+      &lt;iframe src="https://www.example.com" style="width:100%; height:400px; border:none;"&gt;&lt;/iframe&gt;
+    </code>
+  </div>
+  <iframe src="https://www.w3schools.com" style="width:100%; height:300px; border:none;"></iframe>
+
+  <!-- 9. Security with Sandbox -->
+  <h2>9. Security – Using Sandbox Attribute</h2>
+  <p>
+    The <code>sandbox</code> attribute adds restrictions such as blocking scripts,
+    forms, and pop-ups for security. You can allow specific actions using values like
+    <code>allow-scripts</code>, <code>allow-forms</code>, or <code>allow-same-origin</code>.
+  </p>
+  <div class="example-box">
+    <code>
+      &lt;iframe src="demo.html" sandbox="allow-scripts allow-forms"&gt;&lt;/iframe&gt;
+    </code>
+  </div>
+
+  <!-- 10. Best Practices -->
+  <h2>10. Best Practices</h2>
+  <ul>
+    <li>Always use the <code>title</code> attribute for accessibility.</li>
+    <li>Prefer <code>loading="lazy"</code> to improve performance.</li>
+    <li>Restrict with <code>sandbox</code> for safety.</li>
+    <li>Use CSS for responsiveness instead of fixed pixel widths.</li>
+    <li>Avoid overusing iframes – they increase load time.</li>
+  </ul>
+<button><a href="eight.html">Next-></a></button>
+</body>
+</html>

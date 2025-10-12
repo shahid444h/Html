@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Multimedia – Audio & Video </title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #0078d7, #00bcd4);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.4rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 950px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0078d7;
+      border-left: 5px solid #00bcd4;
+      padding-left: 10px;
+    }
+    h3 {
+      color: #0097a7;
+      margin-top: 1.5rem;
+    }
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+    }
+    code {
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: #d63384;
+    }
+    audio, video {
+      display: block;
+      margin: 15px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      max-width: 100%;
+    }
+    ul {
+      background: #f9fafc;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    footer {
+      text-align: center;
+      background: #0078d7;
+      color: white;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+      border-top: 4px solid #00bcd4;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HTML Multimedia – Audio & Video</h1>
+    <p>Learn how to embed and control sound and video files directly in web pages.</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>1. What is Multimedia in HTML?</h2>
+      <p>
+        Multimedia in HTML allows you to add **audio (sound)** and **video (visuals)** directly into your webpage using
+        the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements.
+        These tags **do not require external plugins** like Flash — they are native to HTML5.
+      </p>
+      <p><b>Syntax:</b></p>
+      <pre><code>&lt;audio controls&gt;
+  &lt;source src="sound.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;video controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>2. HTML Audio</h2>
+      <p>
+        The <code>&lt;audio&gt;</code> tag embeds sound content such as music, narration, or effects.
+        It supports file formats like <b>MP3</b>, <b>WAV</b>, and <b>OGG</b>.
+      </p>
+
+      <h3>a) Basic Audio Example</h3>
+      <pre><code>&lt;audio controls&gt;
+  &lt;source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <p><b>Explanation:</b> The <code>controls</code> attribute adds play, pause, and volume buttons.
+      The <code>source</code> tag defines the file and its format.</p>
+
+      <h3>b) Important Attributes of &lt;audio&gt;</h3>
+      <ul>
+        <li><b>controls</b> – Displays audio control buttons (Play, Pause, Volume).</li>
+        <li><b>autoplay</b> – Automatically starts playing when the page loads.</li>
+        <li><b>loop</b> – Repeats the audio indefinitely.</li>
+        <li><b>muted</b> – Starts audio with sound muted.</li>
+        <li><b>preload</b> – Controls how much audio file is loaded:
+          <ul>
+            <li><code>auto</code> – Entire audio loads on page load.</li>
+            <li><code>metadata</code> – Only loads file info (duration, etc.).</li>
+            <li><code>none</code> – Loads nothing until user clicks play.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>c) Audio with Attributes Example</h3>
+      <pre><code>&lt;audio controls autoplay loop muted&gt;
+  &lt;source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+
+      <audio controls autoplay loop muted>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <section>
+      <h2>3. HTML Video</h2>
+      <p>
+        The <code>&lt;video&gt;</code> element allows you to display movies or video clips.
+        Supported formats include <b>MP4</b>, <b>WebM</b>, and <b>OGG</b>.
+      </p>
+
+      <h3>a) Basic Video Example</h3>
+      <pre><code>&lt;video width="320" height="240" controls&gt;
+  &lt;source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+      <video width="320" height="240" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <p><b>Explanation:</b> The <code>controls</code> attribute shows playback buttons. <code>width</code> and
+        <code>height</code> define video size.</p>
+
+      <h3>b) Important Attributes of &lt;video&gt;</h3>
+      <ul>
+        <li><b>controls</b> – Displays control buttons (Play, Pause, Volume, Fullscreen).</li>
+        <li><b>autoplay</b> – Video plays automatically once the page loads.</li>
+        <li><b>loop</b> – Repeats the video continuously.</li>
+        <li><b>muted</b> – Starts video muted by default.</li>
+        <li><b>poster</b> – Shows an image before video starts (thumbnail).</li>
+        <li><b>preload</b> – Controls loading behavior (<code>auto</code>, <code>metadata</code>, <code>none</code>).</li>
+      </ul>
+
+      <h3>c) Video with Attributes Example</h3>
+      <pre><code>&lt;video width="320" height="240" controls autoplay loop muted
+ poster="https://www.w3schools.com/html/pic_trulli.jpg"&gt;
+  &lt;source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+      <video width="320" height="240" controls autoplay loop muted poster="https://www.w3schools.com/html/pic_trulli.jpg">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section>
+      <h2>4. Best Practices</h2>
+      <ul>
+        <li>Always provide the <code>controls</code> attribute for user control.</li>
+        <li>Use <code>muted autoplay</code> together because most browsers block autoplay with sound.</li>
+        <li>Optimize audio/video file sizes for faster page load.</li>
+        <li>Add subtitles or captions using <code>&lt;track&gt;</code> for accessibility.</li>
+        <li>Provide multiple file formats (<code>.mp4</code>, <code>.webm</code>, <code>.ogg</code>) for compatibility.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Ultimate HTML Guide – Multimedia Edition 🎧🎥 | Created by Shaik’s AI Tutor</p>
+  </footer>
+<button><a href="seven.html">Next-></a></button>
+</body>
+</html>

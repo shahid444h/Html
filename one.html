@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Semantic HTML Guide with Detailed Explanation</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    margin: 0.5em 0;
+  }
+
+  h1 {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .section-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    width: 90%;
+  }
+
+  .section-box h2 {
+    color: #4CAF50;
+  }
+
+  .section-box p {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .code {
+    display: block;
+    background: #272822;
+    color: #f8f8f2;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+  }
+
+  .tag-box {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .tag-box::before {
+    content: attr(data-tag);
+    position: absolute;
+    top: -1.2rem;
+    left: 1rem;
+    font-weight: bold;
+    color: #4CAF50;
+    font-size: 0.95rem;
+  }
+
+  .explanation {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid #4CAF50;
+    line-height: 1.5;
+  }
+
+  figure {
+    margin: 1rem 0;
+    text-align: center;
+    border: 2px dashed #81C784;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  figcaption {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .section-box, .tag-box {
+      width: 95%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Html Structure And Semantic HTML</h1>
+
+<main>
+
+  <!-- Detailed Introduction -->
+  <div class="section-box">
+    <h2>HTML Structure Explained</h2>
+    <div class="code">
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+</div>
+
+    <p><strong>&lt;!DOCTYPE html&gt;</strong>: Declares that this document is HTML5. Without it, the browser goes into <em>quirks mode 1990s Html</em>, and CSS might not render properly.</p>
+    
+    <div class="code">&lt;!DOCTYPE html&gt;</div>
+
+    <p><strong>&lt;html lang="en"&gt;</strong>: The root element. The <code>lang</code> attribute tells browsers and screen readers the page language. Missing it may reduce accessibility and SEO.</p>
+    <div class="code">&lt;html lang="en"&gt; ... &lt;/html&gt;</div>
+
+    <p><strong>&lt;head&gt;</strong>: Contains metadata like page title, character set, CSS links, and scripts. Not visible on the page but essential for proper page rendering and SEO.</p>
+    <div class="code">
+      &lt;head&gt;<br>
+      &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+      &nbsp;&nbsp;&lt;title&gt;Page Title&lt;/title&gt;<br>
+      &lt;/head&gt;
+    </div>
+
+    <p><strong>&lt;meta charset="UTF-8"&gt;</strong>: Ensures characters (including emojis, accented letters) are displayed correctly. Without it, some text may appear as gibberish.</p>
+    <div class="code">&lt;meta charset="UTF-8"&gt;</div>
+
+    <p><strong>&lt;meta name="viewport" ... &gt;</strong>: Makes the page responsive on mobiles and tablets. Without it, the page might appear zoomed out or not scale properly.</p>
+    <div class="code">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</div>
+  </div>
+
+  <!-- Header -->
+  <div class="tag-box" data-tag="<header>">
+    <header>
+      <h2>Header Example</h2>
+      <p>Contains the top section like logo, main heading, and navigation links.</p>
+    </header>
+    <div class="explanation">
+      <strong>Why:</strong> Organizes the page top content and improves accessibility. Screen readers recognize it as introductory content.
+      <div class="code">&lt;header&gt;...&lt;/header&gt;</div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <div class="tag-box" data-tag="<nav>">
+    <nav>
+      <a href="#">Home</a> | 
+      <a href="#">About</a> | 
+      <a href="#">Contact</a>
+    </nav>
+    <div class="explanation">
+      <strong>Why:</strong> Contains the main site navigation. Helps search engines and screen readers understand links. Without it, links might not be semantically grouped.
+      <div class="code">&lt;nav&gt;&lt;a href="#"&gt;Link&lt;/a&gt;...&lt;/nav&gt;</div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="tag-box" data-tag="<main>">
+    <main>
+      <p>This area contains the unique page content.</p>
+    </main>
+    <div class="explanation">
+      <strong>Why:</strong> Only one main per page. Helps browsers and assistive tech understand the primary content. Missing it may reduce accessibility.
+      <div class="code">&lt;main&gt;...&lt;/main&gt;</div>
+    </div>
+  </div>
+
+  <!-- Section -->
+  <div class="tag-box" data-tag="<section>">
+    <section>
+      <h3>Section Example</h3>
+      <p>Groups related content under a theme with a heading.</p>
+    </section>
+    <div class="explanation">
+      <strong>Why:</strong> Useful to organize content logically. A section without heading is not recommended.
+      <div class="code">&lt;section&gt;...&lt;/section&gt;</div>
+    </div>
+  </div>
+
+  <!-- Article -->
+  <div class="tag-box" data-tag="<article>">
+    <article>
+      <h3>Article Example</h3>
+      <p>Independent content like a blog post or news item.</p>
+    </article>
+    <div class="explanation">
+      <strong>Why:</strong> Marks content that can stand alone. Great for blogs, news, or forum posts. Missing it may reduce semantic clarity.
+      <div class="code">&lt;article&gt;...&lt;/article&gt;</div>
+    </div>
+  </div>
+
+  <!-- Aside -->
+  <div class="tag-box" data-tag="<aside>">
+    <aside>
+      <p>Sidebar or related content.</p>
+    </aside>
+    <div class="explanation">
+      <strong>Why:</strong> For tangential content like ads, notes, or related info. Improves structure and accessibility.
+      <div class="code">&lt;aside&gt;...&lt;/aside&gt;</div>
+    </div>
+  </div>
+
+  <!-- Figure + Figcaption -->
+  <div class="tag-box" data-tag="<figure> & <figcaption>">
+    <figure>
+      <img src="image.jpg" width="200" alt="Example Image">
+      <figcaption>Caption describing the image.</figcaption>
+    </figure>
+    <div class="explanation">
+      <strong>Why:</strong> Figure groups media (images, videos) with a caption for semantic meaning. Missing figcaption loses accessibility info.
+      <div class="code">
+        &lt;figure&gt;<br>
+        &nbsp;&nbsp;&lt;img src="..." alt="..."&gt;<br>
+        &nbsp;&nbsp;&lt;figcaption&gt;Caption&lt;/figcaption&gt;<br>
+        &lt;/figure&gt;
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="tag-box" data-tag="<footer>">
+    <footer>
+      <p>Bottom section with copyright and contact info.</p>
+    </footer>
+    <div class="explanation">
+      <strong>Why:</strong> Defines page or section footer. Helps screen readers and search engines understand bottom content.
+      <div class="code">&lt;footer&gt;...&lt;/footer&gt;</div>
+    </div>
+  </div>
+<button><a href="two.html">Next-></a></button>
+</main>
+</body>
+</html>

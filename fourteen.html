@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Data Attributes – Interactive Guide</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f4f6f8; color: #333; margin: 30px; line-height: 1.6; }
+  h1 { color: #2c3e50; border-bottom: 4px solid #3498db; display: inline-block; padding-bottom: 8px; }
+  h2 { color: #2980b9; margin-top: 30px; }
+  h3 { color: #16a085; margin-top: 20px; }
+  pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 6px; overflow-x: auto; }
+  code { font-family: Consolas, monospace; }
+  .live-output { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+  .explanation { background: #ecf0f1; padding: 12px; border-radius: 6px; margin-top: 10px; }
+  button { padding: 8px 15px; cursor: pointer; font-size: 14px; margin-top: 5px; }
+  input { padding: 5px; margin-top: 5px; width: 150px; }
+  .interactive { margin-top: 10px; padding: 10px; background: #fdfd96; border-radius: 6px; }
+  table { border-collapse: collapse; width: 60%; margin-top: 10px; }
+  table, th, td { border: 1px solid #3498db; }
+  th, td { padding: 8px; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>HTML Data Attributes – Interactive Guide</h1>
+
+<!-- 1. What are Data Attributes -->
+<h2>1. What are Data Attributes?</h2>
+<p>Data attributes allow you to store <b>custom data</b> on HTML elements. They start with <code>data-</code> and can have any name.</p>
+<div class="explanation">
+<b>Explanation:</b> Useful to store extra information directly in HTML for JavaScript to access, without affecting the page layout or semantics.
+</div>
+
+<!-- 2. Syntax -->
+<h2>2. Syntax</h2>
+<pre>
+&lt;element data-name="value"&gt;Content&lt;/element&gt;
+</pre>
+<div class="explanation">
+<b>Explanation:</b> Replace <code>element</code> with any HTML tag. Replace <code>data-name</code> with your custom attribute name.
+</div>
+
+<!-- 3. Example: Button with Data Attributes -->
+<h2>3. Example: Storing Custom Data</h2>
+<pre>
+&lt;button id="btn1" data-user="101" data-role="admin"&gt;
+  Click Me
+&lt;/button&gt;
+</pre>
+
+<div class="live-output">
+  <button id="btn1" data-user="101" data-role="admin">Click Me</button>
+</div>
+<div class="explanation">
+Click the button to see JavaScript read its <code>data-user</code> and <code>data-role</code>.
+</div>
+
+<!-- 4. Access in JavaScript -->
+<h2>4. Accessing Data Attributes in JS</h2>
+<pre>
+const button = document.getElementById("btn1");
+console.log(button.dataset.user); // 101
+console.log(button.dataset.role); // admin
+</pre>
+
+<div class="interactive">
+  <p id="js-output">Click the button above to see output here.</p>
+</div>
+
+<!-- 5. Interactive Multiple Elements -->
+<h2>5. Multiple Elements Example</h2>
+<pre>
+&lt;div class="product" data-id="1" data-price="50"&gt;Product 1&lt;/div&gt;
+&lt;div class="product" data-id="2" data-price="80"&gt;Product 2&lt;/div&gt;
+</pre>
+
+<div class="live-output">
+  <div class="product" data-id="1" data-price="50" style="padding:5px; border:1px solid #3498db; margin:3px;">Product 1</div>
+  <div class="product" data-id="2" data-price="80" style="padding:5px; border:1px solid #3498db; margin:3px;">Product 2</div>
+</div>
+
+<div class="explanation">
+Hover over products to see their data in the console, and click to see a dynamic alert.
+</div>
+
+<!-- 6. Interactive Form Example -->
+<h2>6. Form Using Data Attributes</h2>
+<pre>
+&lt;input type="text" data-maxlength="10" id="username" placeholder="Username"&gt;
+&lt;button id="checkBtn"&gt;Check Length&lt;/button&gt;
+</pre>
+
+<div class="live-output">
+  <input type="text" data-maxlength="10" id="username" placeholder="Username">
+  <button id="checkBtn">Check Length</button>
+  <p id="lengthOutput"></p>
+</div>
+
+<div class="explanation">
+This form shows how you can store metadata (like max length) in data attributes and use JS to validate dynamically.
+</div>
+
+<!-- 7. Key Points -->
+<h2>7. Key Points</h2>
+<ul>
+  <li>Data attributes always start with <code>data-</code>.</li>
+  <li>Access in JS via <code>element.dataset.attributeName</code>.</li>
+  <li>Perfect for storing extra info for scripts.</li>
+  <li>Do not use for CSS styling; use classes instead.</li>
+</ul>
+<button><a href="fifteen.html">Next-></a></button>
+<!-- JavaScript -->
+<script>
+  // Example 1: Button click alert
+  const button = document.getElementById("btn1");
+  const jsOutput = document.getElementById("js-output");
+  button.addEventListener("click", () => {
+    const user = button.dataset.user;
+    const role = button.dataset.role;
+    alert(`User ID: ${user}, Role: ${role}`);
+    jsOutput.innerText = `Button clicked! User: ${user}, Role: ${role}`;
+  });
+
+  // Example 2: Product divs interactive
+  const products = document.querySelectorAll(".product");
+  products.forEach(prod => {
+    prod.addEventListener("mouseenter", () => {
+      console.log(`Hovering Product ID: ${prod.dataset.id}, Price: $${prod.dataset.price}`);
+    });
+    prod.addEventListener("click", () => {
+      alert(`You clicked Product ${prod.dataset.id} worth $${prod.dataset.price}`);
+    });
+  });
+
+  // Example 3: Form length validation
+  const checkBtn = document.getElementById("checkBtn");
+  const usernameInput = document.getElementById("username");
+  const lengthOutput = document.getElementById("lengthOutput");
+
+  checkBtn.addEventListener("click", () => {
+    const max = usernameInput.dataset.maxlength;
+    const currentLength = usernameInput.value.length;
+    if(currentLength > max) {
+      lengthOutput.innerText = `Input too long! Max length is ${max}.`;
+      lengthOutput.style.color = "red";
+    } else {
+      lengthOutput.innerText = `Input is valid. Current length: ${currentLength}.`;
+      lengthOutput.style.color = "green";
+    }
+  });
+</script>
+
+</body>
+</html>

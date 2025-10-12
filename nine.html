@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Comments, Entities, Character Encoding </title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 30px;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    h2 { color: #2980b9; margin-top: 30px; }
+    h3 { color: #16a085; margin-top: 20px; }
+    code {
+      background: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+      color: #c7254e;
+    }
+    .example {
+      background: #ecf0f1;
+      padding: 15px;
+      border-left: 5px solid #3498db;
+      margin: 15px 0;
+    }
+    p, ul {
+      margin: 10px 0;
+    }
+    ul li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>HTML Comments, Entities, and Character Encoding</h1>
+
+<!-- 1. Comments -->
+<h2>1. HTML Comments</h2>
+<p>
+  Comments are notes written inside HTML code that <b>do not appear in the browser</b>.
+  They help developers:
+</p>
+<ul>
+  <li>Explain parts of the code</li>
+  <li>Temporarily disable sections of code during testing</li>
+  <li>Provide instructions for others reading the code</li>
+</ul>
+
+<h3>Example:</h3>
+<div class="example">
+  <!-- This is a comment in HTML -->
+  &lt;!-- Anything inside these tags is ignored by the browser --&gt;
+  <p>This text is visible in the browser.</p>
+  <!-- <p>This paragraph is commented out and will not display.</p> -->
+</div>
+
+<p><b>Output:</b></p>
+<p>This text is visible in the browser.</p>
+
+<p><b>Explanation:</b> Anything written inside <code>&lt;!-- comment --&gt;</code> is ignored and not rendered by the browser.</p>
+
+<hr>
+
+<!-- 2. HTML Entities -->
+<h2>2. HTML Entities</h2>
+<p>
+  HTML entities are codes used to display reserved characters or special symbols.
+  Browsers may misinterpret certain characters (<, >, &, ") as HTML code,
+  so entities ensure they display correctly.
+</p>
+
+<h3>Common HTML Entities:</h3>
+<ul>
+  <li><code>&amp;lt;</code> → &lt; (less than)</li>
+  <li><code>&amp;gt;</code> → &gt; (greater than)</li>
+  <li><code>&amp;amp;</code> → &amp; (ampersand)</li>
+  <li><code>&amp;quot;</code> → " (double quote)</li>
+  <li><code>&amp;apos;</code> → ' (single quote)</li>
+  <li><code>&amp;nbsp;</code> → non-breaking space</li>
+  <li><code>&amp;copy;</code> → © (copyright symbol)</li>
+  <li><code>&amp;reg;</code> → ® (registered trademark)</li>
+  <li><code>&amp;euro;</code> → € (Euro symbol)</li>
+</ul>
+
+<h3>Example – Using Entities:</h3>
+<div class="example">
+  &lt;p&gt;If x &amp;lt; y then x &amp;amp; y are valid.&lt;/p&gt;
+</div>
+
+<p><b>Output:</b></p>
+<p>If x &lt; y then x &amp; y are valid.</p>
+<p><b>Explanation:</b> Using <code>&lt;</code> and <code>&amp;</code> ensures the browser displays them as text, not HTML code.</p>
+
+<hr>
+
+<!-- 3. Character Encoding -->
+<h2>3. Character Encoding</h2>
+<p>
+  Character encoding defines how characters are represented in HTML.
+  <code>UTF-8</code> is the most common encoding because it supports almost all characters globally.
+</p>
+<p>
+  Always declare encoding in the <code>&lt;head&gt;</code> using:
+</p>
+<div class="example">
+  &lt;meta charset="UTF-8"&gt;
+</div>
+<p><b>Explanation:</b> Without encoding, some characters (like accented letters, emojis, or symbols) may not display correctly in the browser.</p>
+
+<h3>Example – Displaying Special Characters:</h3>
+<div class="example">
+  &lt;p&gt;Currency symbols: &amp;dollar;, &amp;euro;, &amp;pound;&lt;/p&gt;<br>
+  &lt;p&gt;Emoji: &#128512; &#128525; &#128540;&lt;/p&gt;
+</div>
+
+<p><b>Output:</b></p>
+<p>Currency symbols: $, €, £</p>
+<p>Emoji: 😀 😍 😜</p>
+
+<hr>
+
+<h2>4. Best Practices</h2>
+<ul>
+  <li>Always use comments to explain complex sections of code.</li>
+  <li>Use HTML entities for reserved characters (&lt;, &gt;, &amp;, ", ').</li>
+  <li>Declare character encoding (<code>UTF-8</code>) at the top of your HTML file.</li>
+  <li>Use entities for special symbols like ©, ®, €, and currency symbols.</li>
+</ul>
+<button><a href="ten.html">Next-></a></button>
+</body>
+</html>

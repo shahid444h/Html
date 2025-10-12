@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Links</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f7f8fa;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(120deg, #0078d7, #00b4d8);
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0078d7;
+      margin-top: 40px;
+      border-bottom: 2px solid #00b4d8;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+      color: #ffb86c;
+    }
+
+    .output {
+      background: #f0f9ff;
+      border: 1px solid #b3e5fc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #0078d7;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0078d7;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HTML Links – Complete & Detailed Notes</h1>
+    <p>Learn everything about creating hyperlinks in HTML5 with examples, syntax, and outputs.</p>
+  </header>
+
+  <main>
+
+    <h2>HTML Document Structure (Quick Recap)</h2>
+    <p>Before learning about links, let’s recall the structure of a basic HTML5 document.</p>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <div class="output">
+      <strong>Explanation:</strong>
+      <ul>
+        <li><b>&lt;!DOCTYPE html&gt;</b> → Declares the document as HTML5. Without it, browsers may use <b>quirks mode</b>, causing CSS and layout issues.</li>
+        <li><b>&lt;html lang="en"&gt;</b> → Defines language (used by screen readers & SEO).</li>
+        <li><b>&lt;meta charset="UTF-8"&gt;</b> → Ensures all characters & symbols display correctly.</li>
+        <li><b>&lt;meta name="viewport"&gt;</b> → Makes page responsive on all devices.</li>
+        <li><b>&lt;title&gt;</b> → Sets the page title shown in the browser tab.</li>
+      </ul>
+    </div>
+
+    <!-- 1. BASIC LINK -->
+    <h2>1. Basic Link</h2>
+    <p>The <b>&lt;a&gt;</b> (anchor) tag creates hyperlinks to other pages, files, or locations.</p>
+
+    <pre><code>&lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;</code></pre>
+
+    <div class="output">
+      <a href="https://www.example.com">Visit Example.com</a>
+    </div>
+
+    <p><b>Explanation:</b> The <code>href</code> attribute defines the URL destination. The text between the tags becomes clickable.</p>
+
+    <!-- 2. OPEN LINK IN NEW TAB -->
+    <h2>2. Open Link in New Tab</h2>
+
+    <pre><code>&lt;a href="https://www.example.com" target="_blank"&gt;Open in new tab&lt;/a&gt;</code></pre>
+
+    <div class="output">
+      <a href="https://www.example.com" target="_blank">Open in new tab</a>
+    </div>
+
+    <p><b>Explanation:</b> <code>target="_blank"</code> opens the link in a new tab or window.</p>
+
+    <!-- 3. DOWNLOAD ATTRIBUTE -->
+    <h2>3. Download File Link</h2>
+
+    <pre><code>&lt;a href="sample.pdf" download&gt;Download PDF&lt;/a&gt;</code></pre>
+
+    <div class="output">
+      <a href="sample.pdf" download>Download PDF</a>
+    </div>
+
+    <p><b>Explanation:</b> The <code>download</code> attribute forces the browser to download the file instead of opening it.</p>
+
+    <!-- 4. REL ATTRIBUTE -->
+    <h2>4. rel Attribute (Relationship)</h2>
+
+    <p>The <code>rel</code> attribute describes the relationship between the current page and the linked one.</p>
+
+    <table>
+      <tr><th>Value</th><th>Meaning</th></tr>
+      <tr><td>nofollow</td><td>Prevents search engines from following the link.</td></tr>
+      <tr><td>noopener</td><td>Stops new tab from accessing the opener page (security).</td></tr>
+      <tr><td>noreferrer</td><td>Prevents sending referrer info to the target site.</td></tr>
+      <tr><td>author</td><td>Specifies that the linked page is the author of this document.</td></tr>
+      <tr><td>external</td><td>Marks the link as an external website.</td></tr>
+    </table>
+
+    <pre><code>&lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer"&gt;Secure External Link&lt;/a&gt;</code></pre>
+
+    <div class="output">
+      <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Secure External Link</a>
+    </div>
+
+    <!-- 5. EMAIL LINK -->
+    <h2>5. Email Link</h2>
+
+    <pre><code>&lt;a href="mailto:someone@example.com"&gt;Send Email&lt;/a&gt;</code></pre>
+
+    <div class="output">
+      <a href="mailto:someone@example.com">Send Email</a>
+    </div>
+
+    <p><b>Explanation:</b> Opens the user’s default mail app with the given email address.</p>
+
+    <!-- 6. PHONE LINK -->
+    <h2>6. Phone Link</h2>
+
+    <pre><code>&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;</code></pre>
+
+    <div class="output">
+      <a href="tel:+1234567890">Call Us</a>
+    </div>
+
+    <p><b>Explanation:</b> On mobile devices, this opens the phone dialer with the number prefilled.</p>
+
+    <!-- 7. ANCHOR LINK -->
+    <h2>7. Internal / Anchor Link</h2>
+
+    <pre><code>&lt;a href="#section2"&gt;Go to Section 2&lt;/a&gt;
+
+&lt;h2 id="section2"&gt;Section 2&lt;/h2&gt;
+&lt;p&gt;This is the target section.&lt;/p&gt;</code></pre>
+
+    <div class="output">
+      <a href="#section2">Go to Section 2</a>
+      <p style="margin-top: 150px;"></p>
+      <h3 id="section2">Section 2</h3>
+      <p>This is the target section.</p>
+    </div>
+
+    <!-- 8. ATTRIBUTES SUMMARY -->
+    <h2>8. Attributes Summary for &lt;a&gt; Tag</h2>
+    <table>
+      <tr>
+        <th>Attribute</th>
+        <th>Values</th>
+        <th>Description</th>
+      </tr>
+      <tr><td>href</td><td>URL / #id / mailto / tel</td><td>Defines link destination.</td></tr>
+      <tr><td>target</td><td>_self, _blank, _parent, _top</td><td>Specifies where to open the link.</td></tr>
+      <tr><td>rel</td><td>nofollow, noopener, noreferrer, etc.</td><td>Defines relationship between documents.</td></tr>
+      <tr><td>download</td><td>filename (optional)</td><td>Forces file download.</td></tr>
+      <tr><td>title</td><td>Tooltip text</td><td>Displays tooltip on hover.</td></tr>
+      <tr><td>id/class</td><td>custom</td><td>Used for CSS or JS targeting.</td></tr>
+    </table>
+
+    <!-- 9. BEST PRACTICES -->
+    <h2>9. Best Practices</h2>
+    <ul>
+      <li>Use descriptive link text (avoid “click here”).</li>
+      <li>Use <code>target="_blank"</code> with <code>rel="noopener noreferrer"</code> for external links.</li>
+      <li>Keep URLs valid and secure (use HTTPS).</li>
+      <li>Use <code>mailto:</code> and <code>tel:</code> wisely — test them on devices.</li>
+      <li>Style links using CSS pseudo-classes: <code>:hover</code>, <code>:active</code>, <code>:visited</code>.</li>
+    </ul>
+
+  </main>
+
+  <footer>
+    <p>© 2025 HTML Links Guide | Designed for Learning by Shahid</p>
+  </footer>
+  <button><a href="five.html">Next-></a></button>
+</body>
+</html>
